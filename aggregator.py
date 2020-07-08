@@ -56,13 +56,3 @@ class Aggregator:
 		A dictionary of url, article pairs is returned"""
 		urls = self.file_input()
 		return(self.make_requests(urls))
-
-
-if __name__ == '__main__':
-	agg = Aggregator()
-	content = agg.get_links()
-	for url in content:
-		print("All articles from ", url)
-		print("******************************************")
-		print(content[url])
-		print("******************************************\n\n")
