@@ -1,0 +1,68 @@
+import requests
+import xml.etree.ElementTree as ET
+
+class Aggregator:
+
+	def __init__(self):
+		pass
+
+	def parse_XML(self, content):
+		"""
+		Given the content of a request response (assuming non-empty),
+		this function parses the XML and returns a dictionary urls as keys and titles as values.
+		"""
+		articles = {}
+		tree = ET.fromstring(content)
+
+		for child in tree[0]:
+			if child.tag == 'item':
+				title = child.find('title').text
+				url = child.find('link').text
+				articles[url] = title
+
+		return articles
+
+
+	def file_input(self):
+		"""
+		This function reads in urls of rss_feeds and returns list of 
+		the urls.
+		"""
+		file = open('rss_feeds.txt', 'r')
+		urls = []
+		rss_feeds = file.read().splitlines()
+		for url in rss_feeds:
+			urls.append(url)
+		return urls
+
+
+	def make_requests(self, urls):
+		""" Given list of urls of rss_feeds, this function makes GET
+		requests to each url and calls parse_XML on the content of the GET """
+		content = {}
+		for url in urls:
+			request = requests.get(url)
+			if request.status_code == 200:
+				content[url] = self.parse_XML(request.content)
+				# print("All articles from ", url)
+				# print("******************************************")
+				# print(self.parse_XML(request.content))
+				# print("******************************************\n\n")
+		return content
+	
+
+	def get_links(self):
+		""" This method reads in urls from file input and calls make_requests with the list of urls.
+		A dictionary of url, article pairs is returned"""
+		urls = self.file_input()
+		return(self.make_requests(urls))
+
+
+if __name__ == '__main__':
+	agg = Aggregator()
+	content = agg.get_links()
+	for url in content:
+		print("All articles from ", url)
+		print("******************************************")
+		print(content[url])
+		print("******************************************\n\n")
