@@ -1,6 +1,5 @@
 https://www.theguardian.com/world/rss
 https://www.independent.ie/world-news/rss/
 https://www.irishtimes.com/cmlink/news-1.1319192
-https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/section/world/rss.xml
+https://rss.nytimes.com/services/xml/rss/nyt/World.xml
 https://www.rte.ie/feeds/rss/?index=/news/
-https://www.reddit.com/r/worldnews/.rss

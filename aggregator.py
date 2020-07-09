@@ -44,10 +44,6 @@ class Aggregator:
 			request = requests.get(url)
 			if request.status_code == 200:
 				content[url] = self.parse_XML(request.content)
-				# print("All articles from ", url)
-				# print("******************************************")
-				# print(self.parse_XML(request.content))
-				# print("******************************************\n\n")
 		return content
 	
 

@@ -1,7 +1,41 @@
-<!doctype html>
+<html>
+<head>
 <title> RSS FEEDS </title>
+	<style>
+		body {
+			text-align: center;
+		}
 
+		hr {
+			background-color: black;
+			color: black;
+			height: 2px;
+		}
 
-{% if text %}
-  {{ text }}
-{% endif %}
+		h1 { color: #111; font-family: 'Open Sans Condensed', sans-serif; font-size: 32px; font-weight: 700; line-height: 64px; margin: 0 0 0; padding: 20px 30px; text-align: center; text-transform: uppercase; }
+
+		h3 { color: #111; font-family: 'Open Sans', sans-serif; font-size: 16px; }
+
+		a { color: #e8d4a7; text-decoration: none; text-align: right; padding: 15px; font-size: 20px; }
+
+		a:hover { color: #da9650; text-decoration: blink; }
+
+		.padding-after-last-article {
+			height: 50px;
+		}
+	</style>
+</head>
+
+<body>
+<!-- Jinja code to present articles, urls --> 
+{% for key, value in content.items() %}
+ <hr> <h1>{{key[12:]}}</h1> <hr>
+  {% for article in value %}
+  	<h3> {{value[article]}} </h3>
+  	<a href = "{{article}}" > Click to read article! </a>
+  {% endfor %}
+  <div class = "padding-after-last-article"> </div>
+{% endfor %}
+
+</body>
+</html>
