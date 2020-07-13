@@ -11,9 +11,12 @@ class Aggregator:
 		Given the content of a request response (assuming non-empty),
 		this function parses the XML and returns a dictionary urls as keys and titles as values.
 		"""
+		if type(content) != "bytes":
+			return {}
+
 		articles = {}
 		tree = ET.fromstring(content)
-
+	
 		for child in tree[0]:
 			if child.tag == 'item':
 				title = child.find('title').text
