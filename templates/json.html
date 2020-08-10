@@ -1,10 +1,47 @@
-<!doctype html>
 <html>
+<head> 
+<style>
+    .container {
+        text-align: center;
+    }
+    
+    .myButton {
+    	box-shadow:inset 0px 1px 0px 0px #dcecfb;
+    	background:linear-gradient(to bottom, #bddbfa 5%, #80b5ea 100%);
+    	background-color:#bddbfa;
+    	border-radius:6px;
+    	border:1px solid #84bbf3;
+    	display:inline-block;
+    	cursor:pointer;
+    	color:#ffffff;
+    	font-family:Arial;
+    	font-size:15px;
+    	font-weight:bold;
+    	padding:6px 24px;
+    	text-decoration:none;
+    	text-shadow:0px 1px 0px #528ecc;
+    }
+    .myButton:hover {
+    	background:linear-gradient(to bottom, #80b5ea 5%, #bddbfa 100%);
+    	background-color:#80b5ea;
+    }
+    .myButton:active {
+    	position:relative;
+    	top:1px;
+    }
+
+        
+</style>
+</head>
 <body>
 <div class='container'>
-    <h3>Test</h3>
+    
         <form>
-            <a href="/background_aggregator"> <input type = "button" value = "call_flask_function"> </a>
+            <a href="/world"> <input type = "button" value = "World Headlines" class = "myButton"> </a>
+        </form>
+        
+        <form>
+            <a href="/ireland"> <input type = "button" value = "Irish Headlines" class = "myButton"> </a>
         </form>
 </div>
 </body>

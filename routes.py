@@ -9,11 +9,17 @@ def json():
     return render_template('json.html')
 
 
-# aggreggator happening in the background
-@app.route('/background_aggregator')
+@app.route('/world')
 def background_aggregator():
 	agg = aggregator.Aggregator()
-	content = agg.get_links()
+	content = agg.get_links("world")
+	return render_template('rss_feed.html', content = content)
+
+
+@app.route('/ireland')
+def ireland_headlines():
+	agg = aggregator.Aggregator()
+	content = agg.get_links("ireland")
 	return render_template('rss_feed.html', content = content)
 
 

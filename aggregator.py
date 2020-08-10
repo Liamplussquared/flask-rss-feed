@@ -27,12 +27,15 @@ class Aggregator:
 		return articles
 
 
-	def file_input(self):
+	def file_input(self, category):
 		"""
 		This function reads in urls of rss_feeds and returns list of 
 		the urls.
 		"""
-		file = open('rss_feeds.txt', 'r')
+		if category == 'world':
+			file = open('feeds/world_feeds.txt', 'r')
+		elif category == 'ireland':
+			file = open('feeds/irish_feeds.txt', 'r')
 		urls = []
 		rss_feeds = file.read().splitlines()
 		for url in rss_feeds:
@@ -51,8 +54,8 @@ class Aggregator:
 		return content
 	
 
-	def get_links(self):
+	def get_links(self, category):
 		""" This method reads in urls from file input and calls make_requests with the list of urls.
 		A dictionary of url, article pairs is returned"""
-		urls = self.file_input()
+		urls = self.file_input(category)
 		return(self.make_requests(urls))
