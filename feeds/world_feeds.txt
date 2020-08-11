@@ -1,2 +1,7 @@
 https://www.theguardian.com/world/rss
 https://rss.nytimes.com/services/xml/rss/nyt/World.xml
+https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/section/world/rss.xml
+https://www.buzzfeed.com/world.xml
+https://www.yahoo.com/news/rss/world
+http://www.independent.co.uk/news/world/rss
+https://www.time.com/feed/

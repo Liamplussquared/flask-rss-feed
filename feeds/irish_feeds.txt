@@ -1,3 +1,8 @@
 https://www.independent.ie/world-news/rss/
 https://www.irishtimes.com/cmlink/news-1.1319192
 https://www.rte.ie/feeds/rss/?index=/news/
+https://www.irishmirror.ie/?service=rss
+https://www.thejournal.ie/feed/
+https://www.thesun.ie/feed/
+https://www.the42.ie/feed/
+https://www.irishtechnews.ie/feed/
